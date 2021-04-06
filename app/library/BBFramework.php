@@ -114,4 +114,16 @@ class BBFramework {
                 	"params"     =>  array()
                 ];
 	}
+
+	public static function autoLoad($class)
+	{
+		$file = str_replace("_","/", $class);
+		$file = APP_DIR . "/models/" . $file . ".php";
+		if(file_exists($file))
+		{
+			require_once($file);
+			return true;
+		}
+		return false;
+	}
 }

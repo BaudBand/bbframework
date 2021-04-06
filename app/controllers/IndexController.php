@@ -8,6 +8,12 @@ class IndexController extends BBControllerAbstract {
 		$this->renderView("index.php","basic","Index Page");
 	}
 
+	public function altestAction()
+	{
+		$model = new Test_Model();
+		echo $model->multiply(7,12);
+	}
+
 	public function dataAction()
 	{
 		require(APP_DIR . "/models/Data/CategoryExample.php");

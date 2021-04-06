@@ -5,9 +5,9 @@ require("../app/library/BBControllerAbstract.php");
 require("../config/config.php"); 
 require("../vendor/autoload.php"); // Composer
 define("APP_DIR", dirname(__DIR__ . "..") . "/app");
+spl_autoload_register('BBFramework::autoLoad',true,true);
 
 $fw = new BBFramework();
-
 // Connect to mysql, on failure re-route to DB error page
 $mysqlConn = new mysqli(MYSQL_HOST,MYSQL_USER,MYSQL_PASS,MYSQL_DB);
 if($mysqlConn->connect_error)
